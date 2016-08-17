@@ -18,12 +18,16 @@
   "dependencies": {
     "cron": "^1.1.0",
     "debug": "^2.2.0",
+    "geodesy": "^1.1.0",
     "glob": "^7.0.5",
     "glob-promise": "^1.0.6",
     "moment": "^2.14.1",
     "mv": "^2.1.1",
     "node-7z": "^0.4.0",
-    "node-scrapy": "^0.2.3"
+    "node-persist": "0.0.12",
+    "node-scrapy": "^0.2.3",
+    "pdf2json": "^1.1.6",
+    "turf": "^3.0.14"
   },
   "devDependencies": {
     "chai": "^3.5.0",
