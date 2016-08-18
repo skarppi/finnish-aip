@@ -13,8 +13,15 @@
     "finland",
     "airspace"
   ],
-  "author": "Juho Kolehmainen",
+  "author": "Juho Kolehmainen <juho.kolehmainen@iki.fi>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkar/finnish-aip.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/jkar/finnish-aip/issues"
+  },
   "dependencies": {
     "cron": "^1.1.0",
     "debug": "^2.2.0",
