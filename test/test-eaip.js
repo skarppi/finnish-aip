@@ -17,7 +17,7 @@ const dangers = `${TMP_DIR}/EF_ENR_5_1_EN.pdf`
 function* downloadTestFiles() {
   nock('https://ais.fi', { allowUnmocked: true })
     .get('ais/eaip/pdf/**.pdf')
-    .reply(200, 'OK!');
+    .reply(200, 'OK!')
 
   if (!fs.existsSync(aerodromes)) {
     yield downloader.downloadFile('https://ais.fi/ais/eaip/pdf/aerodromes/EF_AD_2_EFHK_EN.pdf', aerodromes)
@@ -32,22 +32,24 @@ function* downloadTestFiles() {
   }
 }
 
-let init = downloadTestFiles()
-while(!init.next().done) {
+const init = downloadTestFiles()
+while (!init.next().done) {
+  // loop
 }
 
 describe('Parse AIP files', () => {
   it('should parse EFHK CTR', () => {
-    const expected = JSON.parse(fs.readFileSync(`${__dirname}/resources/EF_AD_2_EFHK_EN.json`, 'utf8'))
+    const expected = JSON.parse(
+      fs.readFileSync(`${__dirname}/resources/EF_AD_2_EFHK_EN.json`, 'utf8')
+    )
 
     const files = (glob) => {
-      if (glob.indexOf("aerodromes") == 0) {
+      if (glob.indexOf('aerodromes') === 0) {
         return Promise.resolve([aerodromes])
-      } else {
-        return Promise.resolve([])
       }
+      return Promise.resolve([])
     }
-    return eaip.refresh({cycle: 'test', validFrom: '', validUntil: '', files}).then((res) => {
+    return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files }).then((res) => {
       res.aerodromes.should.deep.equal([expected])
     })
   })
