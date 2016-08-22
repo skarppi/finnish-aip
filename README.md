@@ -22,16 +22,23 @@ You must have the 7z executable available in your PATH or in the same directory 
 ## Usage
 
     const eaip = require('finnish-aip')
+    const DATA_DIR = './data'
 
-    // sync now
-    eaip.sync()
+    // sync now if needed
+    eaip.init(DATA_DIR)
         .then(_ => console.log('Sync completed'))
         .catch(err => console.error(err))
 
-    // sync now and every 10 days
-    eaip.sync(10)
+    // sync now if needed and every 10 days
+    eaip.init(DATA_DIR, 10)
+
+    // reset database now and sync
+    eaip.init(DATA_DIR, 0, true)
 
     // check current status (validFrom, validUntil, files)
+    eaip.status()
+
+    // get current airspaces as geojson featurecollection
     eaip.status()
 
 ## Debugging
