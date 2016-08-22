@@ -22,10 +22,9 @@ const syncAndRefresh = force =>
   })
 
 module.exports = {
-  airspaces: () => airac.status().then(queryCache),
+  current: () => airac.status().then(queryCache),
   status: () => airac.status(),
   init: (DATA_DIR, scheduleEveryNthDay, force) => {
-
     airac.init(DATA_DIR)
 
     if (Number.isInteger(scheduleEveryNthDay) && scheduleEveryNthDay > 0) {

@@ -1,164 +1,415 @@
 {
-  "features": [
-    {
-      "geometry": {
-        "coordinates": [
-          [
-           [
-             24.7075,
-             60.411944444444444
-           ],
-           [
-             24.921666666666667,
-             60.45777777777778
-           ],
-           [
-             25.08138888888889,
-             60.4475
-           ],
-           [
-             25.205555555555556,
-             60.369166666666665
-           ],
-           [
-             25.211666666666666,
-             60.27472222222222
-           ],
-           [
-             25.038611111111113,
-             60.282222222222224
-           ],
-           [
-             25.029999999999998,
-             60.26444444444444
-           ],
-           [
-             24.99388888888889,
-             60.2425
-           ],
-           [
-             24.980833333333333,
-             60.217222222222226
-           ],
-           [
-             24.926944444444445,
-             60.20611111111111
-           ],
-           [
-             24.81361111111111,
-             60.217222222222226
-           ],
-           [
-             24.686666666666667,
-             60.27333333333333
-           ],
-           [
-             24.647222222222222,
-             60.32666666666667
-           ],
-           [
-             24.7075,
-             60.411944444444444
-           ]
-         ]
-       ],
-       "type": "Polygon"
-     },
-     "properties": {
-       "airspaceClass": [
-         "D"
-       ],
-       "callSigns": [
-         "HELSINGIN TORNI",
-         "HELSINKI TOWER"
-       ],
-       "designation": "EFHK CTR NORTH",
-       "hoursOfApplicability": [
-         "H24"
-       ],
-       "languages": [
-         "FI",
-         "EN"
-       ],
-       "lowerVerticalLimit": "SFC",
-       "rmk": [
-         "TMZ H24"
-       ],
-       "upperVerticalLimit": "1300 FT MSL"
-     },
-     "type": "Feature"
-   },
-   {
-     "geometry": {
-       "coordinates": [
-         [
-           [
-             25.038611111111113,
-             60.282222222222224
-           ],
-           [
-             25.211666666666666,
-             60.27472222222222
-           ],
-           [
-             25.211111111111112,
-             60.26027777777778
-           ],
-           [
-             25.05,
-             60.17805555555555
-           ],
-           [
-             25.0125,
-             60.18555555555555
-           ],
-           [
-             24.980833333333333,
-             60.217222222222226
-           ],
-           [
-             24.99388888888889,
-             60.2425
-           ],
-           [
-             25.029999999999998,
-             60.26444444444444
-           ],
-           [
-             25.038611111111113,
-             60.282222222222224
-           ]
-         ]
-       ],
-       "type": "Polygon"
-     },
-     "properties": {
-       "airspaceClass": [
-         "D"
-       ],
-       "callSigns": [
-         "HELSINGIN TORNI",
-         "HELSINKI TOWER"
-       ],
-       "designation": "EFHK CTR SOUTH",
-       "hoursOfApplicability": [
-         "H24"
-       ],
-       "languages": [
-         "FI",
-         "EN"
-       ],
-       "lowerVerticalLimit": "700 FT MSL",
-       "rmk": [
-         "TMZ H24"
-       ],
-       "upperVerticalLimit": "1300 FT MSL"
-     },
-     "type": "Feature"
-   }
-  ],
-  "type": "FeatureCollection",
-  "cycle": "test",
-  "validFrom": "",
-  "validUntil": ""
+    "airspaces": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            24.7075,
+                            60.411944444444444
+                        ],
+                        [
+                            24.921666666666667,
+                            60.45777777777778
+                        ],
+                        [
+                            25.08138888888889,
+                            60.4475
+                        ],
+                        [
+                            25.205555555555556,
+                            60.369166666666665
+                        ],
+                        [
+                            25.211666666666666,
+                            60.27472222222222
+                        ],
+                        [
+                            25.038611111111113,
+                            60.282222222222224
+                        ],
+                        [
+                            25.029999999999998,
+                            60.26444444444444
+                        ],
+                        [
+                            24.99388888888889,
+                            60.2425
+                        ],
+                        [
+                            24.980833333333333,
+                            60.217222222222226
+                        ],
+                        [
+                            24.926944444444445,
+                            60.20611111111111
+                        ],
+                        [
+                            24.81361111111111,
+                            60.217222222222226
+                        ],
+                        [
+                            24.686666666666667,
+                            60.27333333333333
+                        ],
+                        [
+                            24.647222222222222,
+                            60.32666666666667
+                        ],
+                        [
+                            24.7075,
+                            60.411944444444444
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "airspaceClass": [
+                    "D"
+                ],
+                "callSigns": [
+                    "HELSINGIN TORNI",
+                    "HELSINKI TOWER"
+                ],
+                "designation": "EFHK CTR NORTH",
+                "hoursOfApplicability": [
+                    "H24"
+                ],
+                "languages": [
+                    "FI",
+                    "EN"
+                ],
+                "lowerVerticalLimit": "SFC",
+                "rmk": [
+                    "TMZ H24"
+                ],
+                "upperVerticalLimit": "1300 FT MSL"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            25.038611111111113,
+                            60.282222222222224
+                        ],
+                        [
+                            25.211666666666666,
+                            60.27472222222222
+                        ],
+                        [
+                            25.211111111111112,
+                            60.26027777777778
+                        ],
+                        [
+                            25.05,
+                            60.17805555555555
+                        ],
+                        [
+                            25.0125,
+                            60.18555555555555
+                        ],
+                        [
+                            24.980833333333333,
+                            60.217222222222226
+                        ],
+                        [
+                            24.99388888888889,
+                            60.2425
+                        ],
+                        [
+                            25.029999999999998,
+                            60.26444444444444
+                        ],
+                        [
+                            25.038611111111113,
+                            60.282222222222224
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "airspaceClass": [
+                    "D"
+                ],
+                "callSigns": [
+                    "HELSINGIN TORNI",
+                    "HELSINKI TOWER"
+                ],
+                "designation": "EFHK CTR SOUTH",
+                "hoursOfApplicability": [
+                    "H24"
+                ],
+                "languages": [
+                    "FI",
+                    "EN"
+                ],
+                "lowerVerticalLimit": "700 FT MSL",
+                "rmk": [
+                    "TMZ H24"
+                ],
+                "upperVerticalLimit": "1300 FT MSL"
+            },
+            "type": "Feature"
+        }
+    ],
+    "identifier": "EFHK",
+    "runways": [
+        {
+            "bearingDegrees": [
+                "047.47"
+            ],
+            "dimensionsInMeters": [
+                "3060 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.903869444444442,
+                        60.31294722222222
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "133.6"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "04L"
+            ],
+            "surface": [
+                "100/F/A/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.903869444444442,
+                        60.31294722222222
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": false,
+                    "elevation": "133.6"
+                },
+                "type": "Feature"
+            }
+        },
+        {
+            "bearingDegrees": [
+                "227.51"
+            ],
+            "dimensionsInMeters": [
+                "3060 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.944694444444444,
+                        60.33150555555556
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "179.9"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "22R"
+            ],
+            "surface": [
+                "100/F/A/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.943891666666666,
+                        60.33114166666667
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": true,
+                    "elevation": "179.2"
+                },
+                "type": "Feature"
+            }
+        },
+        {
+            "bearingDegrees": [
+                "047.50"
+            ],
+            "dimensionsInMeters": [
+                "3500 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.932372222222224,
+                        60.30947222222222
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "153.0"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "04R"
+            ],
+            "surface": [
+                "102/F/B/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.93637222222222,
+                        60.31129166666666
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": true,
+                    "elevation": "151.8"
+                },
+                "type": "Feature"
+            }
+        },
+        {
+            "bearingDegrees": [
+                "227.54"
+            ],
+            "dimensionsInMeters": [
+                "3500 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.979091666666665,
+                        60.33068888888889
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "148.7"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "22L"
+            ],
+            "surface": [
+                "102/F/B/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.979091666666665,
+                        60.33068888888889
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": false,
+                    "elevation": "148.7"
+                },
+                "type": "Feature"
+            }
+        },
+        {
+            "bearingDegrees": [
+                "153.04"
+            ],
+            "dimensionsInMeters": [
+                "2901 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.96449722222222,
+                        60.330275
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "162.9"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "15"
+            ],
+            "surface": [
+                "108/F/B/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.96449722222222,
+                        60.330275
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": false,
+                    "elevation": "162.9"
+                },
+                "type": "Feature"
+            }
+        },
+        {
+            "bearingDegrees": [
+                "333.06"
+            ],
+            "dimensionsInMeters": [
+                "2901 x 60"
+            ],
+            "runwayEnd": {
+                "geometry": {
+                    "coordinates": [
+                        24.988286111111112,
+                        60.307066666666664
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "elevation": "147.1"
+                },
+                "type": "Feature"
+            },
+            "rwy": [
+                "33"
+            ],
+            "surface": [
+                "108/F/B/W/T",
+                "ASPH"
+            ],
+            "threshold": {
+                "geometry": {
+                    "coordinates": [
+                        24.988286111111112,
+                        60.307066666666664
+                    ],
+                    "type": "Point"
+                },
+                "properties": {
+                    "displaced": false,
+                    "elevation": "147.1"
+                },
+                "type": "Feature"
+            }
+        }
+    ]
 }

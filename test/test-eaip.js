@@ -48,7 +48,7 @@ describe('Parse AIP files', () => {
       }
     }
     return eaip.refresh({cycle: 'test', validFrom: '', validUntil: '', files}).then((res) => {
-      res.should.deep.equal(expected)
+      res.aerodromes.should.deep.equal([expected])
     })
   })
 })
