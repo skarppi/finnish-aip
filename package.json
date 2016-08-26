@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkar/finnish-aip.git"
+    "url": "https://github.com/skarppi/finnish-aip.git"
   },
   "bugs": {
-    "url" : "https://github.com/jkar/finnish-aip/issues"
+    "url" : "https://github.com/skarppi/finnish-aip/issues"
   },
   "dependencies": {
     "cron": "^1.1.0",
