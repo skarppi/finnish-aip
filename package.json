@@ -1,6 +1,6 @@
 {
   "name": "finnish-aip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for downloading and parsing Finnish Aeronautical Information Publication (AIP)",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "url": "https://github.com/skarppi/finnish-aip.git"
   },
   "bugs": {
-    "url" : "https://github.com/skarppi/finnish-aip/issues"
+    "url": "https://github.com/skarppi/finnish-aip/issues"
   },
   "dependencies": {
     "cron": "^1.1.0",
