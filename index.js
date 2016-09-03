@@ -1,28 +1,28 @@
 const CronJob = require('cron').CronJob
+const storage = require('node-persist')
 const airac = require('./lib/airac')
 const eaip = require('./lib/eaip')
-const storage = require('./lib/storage')
 
-const queryCache = status => {
-  const cached = storage.getItem(status.cycle)
-  if (status.equals(cached)) {
-    return cached
-  }
-  return undefined
-}
+storage.initSync()
+
+const cacheKey = status => status.validFrom + status.validUntil
+
+const cacheGet = status => storage.getItem(cacheKey(status))
+
+const cacheSet = results => storage.setItem(cacheKey(results), results).then(() => results)
 
 const syncAndRefresh = force =>
-  airac.sync().then(status => {
-    if (force || queryCache(status) === undefined) {
-      return eaip.refresh(status).then(results =>
-        storage.setItem(status.cycle, results)
-      )
-    }
-    return Promise.reject('304 Not Modified')
-  })
+  airac.sync().then(status =>
+    cacheGet(status).then(cached => {
+      if (force || !cached) {
+        return eaip.refresh(status).then(cacheSet)
+      }
+      return cached
+    })
+  )
 
 module.exports = {
-  current: () => airac.status().then(queryCache),
+  current: () => airac.status().then(cacheGet),
   status: () => airac.status(),
   init: (dir = './data', scheduleEveryNthDay = 0, force = false) => {
     airac.init(dir)
