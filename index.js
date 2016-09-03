@@ -24,8 +24,8 @@ const syncAndRefresh = force =>
 module.exports = {
   current: () => airac.status().then(queryCache),
   status: () => airac.status(),
-  init: (DATA_DIR, scheduleEveryNthDay, force) => {
-    airac.init(DATA_DIR)
+  init: (dir = './data', scheduleEveryNthDay = 0, force = false) => {
+    airac.init(dir)
 
     if (Number.isInteger(scheduleEveryNthDay) && scheduleEveryNthDay > 0) {
       const cron = new CronJob({
