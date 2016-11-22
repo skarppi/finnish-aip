@@ -1,6 +1,6 @@
 {
   "name": "finnish-aip",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library for downloading and parsing Finnish Aeronautical Information Publication (AIP)",
   "main": "index.js",
   "scripts": {
