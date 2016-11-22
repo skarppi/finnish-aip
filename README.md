@@ -40,7 +40,7 @@ eaip.init()
 
 Initializes the library and starts a sync if needed. Sync results are cached for later use.
 
-* **dir**: output directory for extracted AIP images
+* **dir**: output directory for extracted AIP images, will be created if missing
 * **poll**: sync every n-days for updates (0 is off)
 * **force**: if true starts from scratch
 
