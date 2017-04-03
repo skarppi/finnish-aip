@@ -34,7 +34,7 @@
     "node-7z": "^0.4.0",
     "node-persist": "2.0.2",
     "node-scrapy": "^0.2.3",
-    "pdf2json": "^1.1.6",
+    "pdf2json": "^1.1.7",
     "turf": "^3.0.14"
   },
   "devDependencies": {

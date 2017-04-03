@@ -14,6 +14,8 @@ const aerodromes = `${TMP_DIR}/EF_AD_2_EFHK_EN.pdf`
 const airspaces = `${TMP_DIR}/EF_ENR_2_1_EN.pdf`
 const dangers = `${TMP_DIR}/EF_ENR_5_1_EN.pdf`
 
+const RESOURCES_DIR = path.join(__dirname, 'resources')
+
 function* downloadTestFiles() {
   nock('https://ais.fi', { allowUnmocked: true })
     .get('ais/eaip/pdf/**.pdf')
@@ -38,18 +40,36 @@ while (!init.next().done) {
 }
 
 describe('Parse AIP files', () => {
-  it('should parse EFHK CTR', () => {
-    const expected = JSON.parse(
-      fs.readFileSync(`${__dirname}/resources/EF_AD_2_EFHK_EN.json`, 'utf8')
-    )
+  const expected = JSON.parse(
+    fs.readFileSync(`${__dirname}/resources/EF_AD_2_EFHK_EN.json`, 'utf8')
+  )
 
-    const files = (glob) => {
+  const aerodromeFiles = (src) => {
+    return (glob) => {
       if (glob.indexOf('aerodromes') === 0) {
-        return Promise.resolve([aerodromes])
+        return Promise.resolve([src])
       }
       return Promise.resolve([])
     }
+  }
+
+  it('should parse EFHK CTR from latest available file', () => {
+    const files = aerodromeFiles(aerodromes)
     return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files }).then((res) => {
+      res.aerodromes.should.deep.equal([expected])
+    })
+  })
+
+  it('should parse EFHK CTR with vlines & hlines', () => {
+    const files = aerodromeFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2016-12-08.pdf`)
+    return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files}).then((res) =>
+      res.aerodromes.should.deep.equal([expected])
+    )
+  })
+
+  it('should parse EFHK CTR without vlines & hlines', () => {
+    const files = aerodromeFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2017-02-02.pdf`)
+    return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files}).then((res) => {
       res.aerodromes.should.deep.equal([expected])
     })
   })

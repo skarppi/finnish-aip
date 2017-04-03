@@ -259,7 +259,7 @@
                     "type": "Point"
                 },
                 "properties": {
-                    "elevation": "153.0"
+                    "elevation": "153.2"
                 },
                 "type": "Feature"
             },
@@ -280,7 +280,7 @@
                 },
                 "properties": {
                     "displaced": true,
-                    "elevation": "151.8"
+                    "elevation": "151.6"
                 },
                 "type": "Feature"
             }
@@ -296,12 +296,12 @@
                 "geometry": {
                     "coordinates": [
                         24.979091666666665,
-                        60.33068888888889
+                        60.33069166666667
                     ],
                     "type": "Point"
                 },
                 "properties": {
-                    "elevation": "148.7"
+                    "elevation": "148.6"
                 },
                 "type": "Feature"
             },
@@ -316,13 +316,13 @@
                 "geometry": {
                     "coordinates": [
                         24.979091666666665,
-                        60.33068888888889
+                        60.33069166666667
                     ],
                     "type": "Point"
                 },
                 "properties": {
                     "displaced": false,
-                    "elevation": "148.7"
+                    "elevation": "148.6"
                 },
                 "type": "Feature"
             }

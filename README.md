@@ -34,6 +34,11 @@ eaip.init()
     .catch(err => console.error(err))
 ```
 
+Start node with debugging to see the output.
+```sh
+DEBUG=finnish-aip node -e "require('.').init().then(json => console.log(json)).catch(err => console.error(err))"
+```
+
 ## API Documentation
 
 #### `init([dir='./data'], [poll=0], [force=false])` => `promise`
