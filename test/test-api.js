@@ -38,6 +38,7 @@ describe('API init starts a sync and results are cached', () => {
 
   const cacheKey = expected.validFrom + expected.validUntil
 
+  // fake the iso image being already downloaded and extracted
   before(() => {
     fs.mkdirSync(TMP_DIR)
     fs.mkdirSync(`${TMP_DIR}/2010-06-23`)
@@ -52,13 +53,13 @@ describe('API init starts a sync and results are cached', () => {
 
   beforeEach(() => {
     nock('https://ais.fi')
-      .get('/C-en/services_en/downloads')
+      .get('/en/products-and-services/aip-iso-image')
       .reply(200, `
         <table><tr><td>
-          <a href="/files/finavia2/iso-image/AMDT_04_2010_iso_eaip_finland_23jun2010.iso">link1</a>
-        </td></tr><tr><td>
-          <a href="/files/finavia2/iso-image/AMDT_04_2010_iso_eaip_finland_23jun2010.iso">link1</a>
-        </td></tr></table>`)
+          <a href="/download_file/view/75">link1</a>
+        </td><td>23 JUN 2010</td></tr><tr><td>
+          <a href="/download_file/view/74">link2</a>
+        </td><td>23 JUN 2010</td></tr></table>`)
   })
 
   const validateCurrent = () =>
@@ -72,13 +73,15 @@ describe('API init starts a sync and results are cached', () => {
       should.equal(status.validFrom, expected.validFrom)
       should.equal(status.validUntil, expected.validUntil)
       return status.files('*').should.eventually.deep.equal([])
+    }).catch(err => {
+      should.fail()
     })
 
   it('should sync on first init', () => {
     // make sure cache key is empty
     persist.removeItemSync(cacheKey)
 
-    api.init(TMP_DIR).then(result => {
+    return api.init(TMP_DIR).then(result => {
       nock.isDone().should.equal(true)
 
       result.should.deep.equal(expected)
@@ -87,6 +90,9 @@ describe('API init starts a sync and results are cached', () => {
       persist.getItemSync(cacheKey).should.deep.equal(expected)
 
       return validateCurrent().then(() => validateStatus())
+    }).catch(err => {
+      console.log(err)
+      should.fail()
     })
   })
 
