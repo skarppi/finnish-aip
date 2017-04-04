@@ -1,0 +1,394 @@
+{
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP20 LOVIISA",
+"upperVerticalLimit": "FL 65",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"NUCLEAR"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+26.370833333333334,
+60.407777777777774
+],
+[
+26.420555555555556,
+60.385555555555555
+],
+[
+26.422777777777778,
+60.33388888888889
+],
+[
+26.306944444444444,
+60.3325
+],
+[
+26.26888888888889,
+60.36138888888889
+],
+[
+26.26638888888889,
+60.406666666666666
+],
+[
+26.370833333333334,
+60.407777777777774
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP25 OLKILUOTO",
+"upperVerticalLimit": "FL 65",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"NUCLEAR"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+21.42638888888889,
+61.28722222222222
+],
+[
+21.549444444444447,
+61.245
+],
+[
+21.46,
+61.18583333333333
+],
+[
+21.336944444444445,
+61.22805555555556
+],
+[
+21.42638888888889,
+61.28722222222222
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP30 KILPILAHTI",
+"upperVerticalLimit": "1300 FT MSL",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"REFINERY,",
+"CHEMICAL"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+25.529166666666665,
+60.32638888888889
+],
+[
+25.473888888888887,
+60.29527777777778
+],
+[
+25.541666666666668,
+60.2875
+],
+[
+25.561111111111114,
+60.31666666666667
+],
+[
+25.529166666666665,
+60.32638888888889
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP35 MEILAHTI",
+"upperVerticalLimit": "500 FT MSL",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"VIP"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+24.90222222222222,
+60.18861111111111
+],
+[
+24.909166666666664,
+60.18611111111111
+],
+[
+24.912777777777777,
+60.184999999999995
+],
+[
+24.913055555555555,
+60.17916666666667
+],
+[
+24.890833333333333,
+60.181666666666665
+],
+[
+24.890555555555554,
+60.18833333333333
+],
+[
+24.90222222222222,
+60.18861111111111
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP40 MUNKKINIEMI",
+"upperVerticalLimit": "500 FT MSL",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"VIP"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+24.871111111111112,
+60.19499999999999
+],
+[
+24.875555555555557,
+60.193888888888885
+],
+[
+24.879166666666666,
+60.192499999999995
+],
+[
+24.877222222222223,
+60.190555555555555
+],
+[
+24.87138888888889,
+60.191111111111105
+],
+[
+24.871111111111112,
+60.19499999999999
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP45 LUONNONMAA",
+"upperVerticalLimit": "500 FT MSL",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"VIP"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+22.001666666666665,
+60.47555555555556
+],
+[
+22.016666666666666,
+60.47
+],
+[
+22.020833333333332,
+60.46194444444445
+],
+[
+22.01833333333333,
+60.46055555555556
+],
+[
+22.00888888888889,
+60.46333333333334
+],
+[
+21.99638888888889,
+60.462500000000006
+],
+[
+21.99638888888889,
+60.464444444444446
+],
+[
+21.991944444444446,
+60.4675
+],
+[
+21.988333333333333,
+60.46666666666667
+],
+[
+21.98611111111111,
+60.47166666666667
+],
+[
+22.001666666666665,
+60.47555555555556
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP50 KRUUNUNHAKA",
+"upperVerticalLimit": "500 FT MSL",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"VIP"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+24.958333333333332,
+60.174166666666665
+],
+[
+24.95888888888889,
+60.1675
+],
+[
+24.949444444444445,
+60.16722222222222
+],
+[
+24.948611111111113,
+60.172777777777775
+],
+[
+24.950555555555553,
+60.174166666666665
+],
+[
+24.958333333333332,
+60.174166666666665
+]
+]
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"designation": "EFP55 HANHIKIVENNIEMI",
+"upperVerticalLimit": "FL 65",
+"lowerVerticalLimit": "SFC",
+"activityType": [
+"NUCLEAR"
+],
+"hoursOfApplicability": [
+"H24"
+],
+"rmk": []
+},
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+24.279722222222222,
+64.5436111111111
+],
+[
+24.297222222222224,
+64.52888888888889
+],
+[
+24.266666666666666,
+64.51305555555555
+],
+[
+24.220555555555553,
+64.53333333333333
+],
+[
+24.246666666666666,
+64.54222222222222
+],
+[
+24.279722222222222,
+64.5436111111111
+]
+]
+]
+}
+}
+]
+}

@@ -39,38 +39,63 @@ while (!init.next().done) {
   // loop
 }
 
-describe('Parse AIP files', () => {
+const globFiles = (src, filter) => 
+  (glob) => {
+    if (glob.indexOf(filter) !== -1) {
+      return Promise.resolve([src])
+    }
+    return Promise.resolve([])
+  }
+
+describe('Parse AIP aerodromes', () => {
   const expected = JSON.parse(
     fs.readFileSync(`${__dirname}/resources/EF_AD_2_EFHK_EN.json`, 'utf8')
   )
 
-  const aerodromeFiles = (src) => {
-    return (glob) => {
-      if (glob.indexOf('aerodromes') === 0) {
-        return Promise.resolve([src])
-      }
-      return Promise.resolve([])
-    }
-  }
-
   it('should parse EFHK CTR from latest available file', () => {
-    const files = aerodromeFiles(aerodromes)
+    const files = globFiles(aerodromes, 'aerodromes')
     return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files }).then((res) => {
       res.aerodromes.should.deep.equal([expected])
     })
   })
 
   it('should parse EFHK CTR with vlines & hlines', () => {
-    const files = aerodromeFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2016-12-08.pdf`)
+    const files = globFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2016-12-08.pdf`, 'aerodromes')
     return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files}).then((res) =>
       res.aerodromes.should.deep.equal([expected])
     )
   })
 
   it('should parse EFHK CTR without vlines & hlines', () => {
-    const files = aerodromeFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2017-02-02.pdf`)
+    const files = globFiles(`${RESOURCES_DIR}/EF_AD_2_EFHK_EN-2017-02-02.pdf`, 'aerodromes')
     return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files}).then((res) => {
       res.aerodromes.should.deep.equal([expected])
+    })
+  })
+})
+
+describe('Parse AIP airspaces', () => {
+  const expected = JSON.parse(
+    fs.readFileSync(`${__dirname}/resources/EF_ENR_2_1_EN.json`, 'utf8')
+  )
+
+  it('should parse TMAs from latest available file', () => {
+    const files = globFiles(airspaces, 'ENR_2_1')
+    return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files }).then((res) => {
+      res.tma.should.deep.equal(expected)
+    })
+  })
+})
+
+describe('Parse AIP prohibited areas', () => {
+  const expected = JSON.parse(
+    fs.readFileSync(`${__dirname}/resources/EF_ENR_5_1_EN.json`, 'utf8')
+  )
+
+  it('should parse danger areas from latest available file', () => {
+    const files = globFiles(dangers, 'ENR_5_1')
+    return eaip.refresh({ cycle: 'test', validFrom: '', validUntil: '', files }).then((res) => {
+      res.prohibitedAreas.should.deep.equal(expected)
     })
   })
 })
